@@ -86,8 +86,7 @@ void remove_node_greater_than_value(struct node ** indirect) {
 /* START: Dell interview */
 void rotate_linked_list_left(struct node ** indirect) {
 
-	int total_rotation = 0;
-	int i;
+	int i, total_rotation = 0;
 	struct node ** head_ref = indirect;
 	struct node *tmp_head = NULL;
 	printf("Enter the number of rotation: ");
@@ -110,6 +109,32 @@ void rotate_linked_list_left(struct node ** indirect) {
 	*indirect = *head_ref;
 	*head_ref = tmp_head;
 }
+
+void rotate_linked_list_right(struct node ** indirect) {
+	
+	int i, total_rotation = 0;
+	struct node ** head_ref = indirect;
+	struct node ** walk = head_ref;
+
+	printf("Enter the number of rotation: ");
+	scanf(" %d", &total_rotation);
+
+	for(i=0; i < total_rotation && (*indirect) != NULL; i++)
+		indirect = &(*indirect)->next;
+
+	if(total_rotation == 0 || *indirect == NULL)
+		return;
+
+	while(*indirect != NULL) {
+		indirect = &(*indirect)->next;
+		walk = &(*walk)->next;
+	}
+
+	*indirect = *head_ref;
+	*head_ref = *walk;
+	*walk = NULL;
+	
+}
 /* END: Dell interview */
 
 void cleanup_linked_list(struct node ** indirect) {
@@ -128,7 +153,8 @@ int main() {
 			\r3. Delete node from Begining\n\
 			\r4. Delete node from  end\n\
 			\r5. Remove node greater than given value\n\
-			\r6. Rotate linked list left by given value\n\
+			\r6. Rotate linked list by given value(Left)\n\
+			\r7. Rotate linked list by given value(Right)\n\
 			\r9. Print Linked List\n\
 			\r0. EXIT\n\n\
 			\rEnter your choice: ");
@@ -140,6 +166,7 @@ int main() {
 			case 4: delete_node_at_end(&head); break;
 			case 5: remove_node_greater_than_value(&head); break;
 			case 6: rotate_linked_list_left(&head); break;
+			case 7: rotate_linked_list_right(&head); break;
 			case 9: print_list(head); break;
 			case 0: cleanup_linked_list(&head); break;
 			default: printf("X-X-X INVALID CHOICE X-X-X\n\n\
