@@ -72,7 +72,6 @@ void pop_node_before_certain_time_frame(struct node ** indirect, unsigned int ti
 }
 
 void display_node(struct node * head) {
-    
     printf("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \nLIST >  ");
     while(head != NULL) {
         printf("  %d", head->time_stamp);
