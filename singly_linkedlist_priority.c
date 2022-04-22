@@ -17,7 +17,6 @@ struct node
 	struct node* next;
 };
 
-
 struct node * creaate_node() 
 {
 	struct node *new_node = malloc(sizeof(*new_node));

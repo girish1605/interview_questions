@@ -7,7 +7,6 @@ int extract_bit_from_range(unsigned int from, unsigned int to, int num) {
 	return num << ((sizeof(num) * CHAR_SIZE) - to) \
 				>> ((sizeof(num) * CHAR_SIZE) - to) \
 				>> (from / NIBBLE_SIZE) * NIBBLE_SIZE;
-
 }
 
 int main() {

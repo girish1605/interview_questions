@@ -6,7 +6,6 @@
  * Author: Girish Bhangale <girishbhangale@outloo.com>
  */
 
-
 #include <stdio.h>
 
 #define SIZE_CHAR 8
@@ -42,4 +41,5 @@ int main() {
 	print_bitwise(num);
 	bitwise_reverse(num);
 
+	return 0;
 }

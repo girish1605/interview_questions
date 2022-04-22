@@ -54,7 +54,6 @@ void push_node(struct node **indirect, unsigned int time_stamp) {
     gcount++;
 }
 
-
 void pop_node_before_certain_time_frame(struct node ** indirect, unsigned int time_stamp) {
 
     while((*indirect != NULL) &&  (*indirect)->time_stamp < (int)(time_stamp - TIME_FRAME)) {
@@ -66,7 +65,6 @@ void pop_node_before_certain_time_frame(struct node ** indirect, unsigned int ti
 
 }
 
-
 void display_node(struct node * head) {
     printf("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \nLIST >  ");
     while(head != NULL) {
@@ -76,14 +74,12 @@ void display_node(struct node * head) {
     printf("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n");
 }
 
-
 int request(int time_stamp) {
     push_node(&head, time_stamp);
     pop_node_before_certain_time_frame(&head, time_stamp);
 
     return gcount;   
 }
-
 
 int main() {
  
