@@ -40,7 +40,6 @@ struct node * create_node(unsigned int time_stamp) {
 void push_node(struct node **indirect, unsigned int time_stamp) {
 
     static struct node * end_node = NULL;
-
     struct node * new_node = create_node(time_stamp);
 
     if(*indirect == NULL) {
@@ -83,14 +82,11 @@ void display_node(struct node * head) {
 }
 
 int request(int time_stamp) {
-
     push_node(&head, time_stamp);
-
     pop_node_before_certain_time_frame(&head, time_stamp);
 
     return gcount;   
 }
-
 
 
 int main() {
@@ -105,5 +101,4 @@ int main() {
     printf("Number in last 1000ms : %d\n", request(5000));
 
     return 0;
-
 }
